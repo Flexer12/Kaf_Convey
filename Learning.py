@@ -20,14 +20,4 @@ results = model.train(
 
 # Валидация после обучения
 metrics = model.val()
-print("mAP50:", metrics.box.map50)
-print("mAP50-95:", metrics.box.map)
-print("Precision:", metrics.box.mp)
-print("Recall:", metrics.box.mr)
 
-# Детальный анализ
-if hasattr(metrics, 'results_dict'):
-    for key, value in metrics.results_dict.items():
-        print(f"{key}: {value}")
-# Предсказание на новых изображения
-results = model.predict('test_photo_jpg.rf.c63b8c2ca999640bf91069ce3487978d.jpg', save=True)
