@@ -85,7 +85,8 @@ class BoltDetectionSystem:
                 else:
                     # Отправляем команду на обе Arduino
                     self.send_user_command(self.ser_1, cmd, "Arduino 1")
-                    
+
+
             except Exception as e:
                 print(f"Ошибка ввода: {e}")
                 break
