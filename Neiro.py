@@ -189,6 +189,17 @@ class BoltDetectionSystem:
     def initialize_camera(self, source):
         """Инициализация камеры - ВЫЗЫВАЕТСЯ из process_video_stream"""
         cap = cv2.VideoCapture(source, cv2.CAP_DSHOW)
+        # Настройки камеры
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+        cap.set(cv2.CAP_PROP_FPS, 30)
+        cap.set(cv2.CAP_PROP_AUTOFOCUS, 0)
+        cap.set(cv2.CAP_PROP_FOCUS, 20)
+        cap.set(cv2.CAP_PROP_AUTO_WB, 0)
+        cap.set(cv2.CAP_PROP_WB_TEMPERATURE, 4500)
+        cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0)
+        cap.set(cv2.CAP_PROP_EXPOSURE, -7)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
