@@ -1,0 +1,32 @@
+# Конфигурация подключения к оборудованию
+modbus:
+  host: "192.168.1.100"
+  port: 502
+  timeout: 5
+  retries: 3
+
+# Конфигурация MQTT брокера
+mqtt:
+  broker: "iot-broker.local"
+  port: 1883
+  username: "conveyor_user"
+  password: "secure_password"
+  topics:
+    sensors: "conveyor/sensors"
+    commands: "conveyor/commands"
+    alerts: "conveyor/alerts"
+
+# Конфигурация базы данных
+database:
+  host: "localhost"
+  port: 5432
+  name: "conveyor_db"
+  user: "conveyor_user"
+  password: "db_password"
+
+# Параметры конвейера
+conveyor:
+  max_speed: 10.0  # м/с
+  max_temperature: 90.0  # °C
+  max_vibration: 7.5  # mm/s
+  maintenance_interval: 720  # часов
